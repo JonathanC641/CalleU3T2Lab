@@ -23,25 +23,31 @@ public class Main {
 //        }
 //        System.out.println(response);  // print response
 
-        SelectionMadness madness = new SelectionMadness();
-
-        System.out.println(madness.flipCoin());
-        System.out.println(madness.flipCoin());
-        System.out.println(madness.flipCoin());
-
-        // test largest
-        System.out.println(madness.largest(5, 8, 3));
-        System.out.println(madness.largest(8, 5, 3));
-        System.out.println(madness.largest(3, 5, 8));
-        System.out.println(madness.largest(-5, -8, -3));
-        System.out.println(madness.largest(11, 11, 10));
-
-        System.out.println(madness.rightTriangle(3, 4, 5));
-        System.out.println(madness.rightTriangle(5, 4, 3));
-        System.out.println(madness.rightTriangle(6, 8, 10));
-        System.out.println(madness.rightTriangle(8, 10, 6));
-        System.out.println(madness.rightTriangle(3, 6, 5));
-        System.out.println(madness.rightTriangle(1, 2, 3));
+        Scanner myScanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int num = myScanner.nextInt();
+        boolean value1 = num % 5 == 0;
+        boolean value2 = num % 7 ==0;
+        boolean even = num % 2 ==0;
+        boolean odd = num % 2 != 0;
+        if (num <= 0){
+            System.out.println("That's not positive!");
+        }else if (num > 0 && value1 && value2 && odd){
+            System.out.println("Divisible by 5!");
+            System.out.println("Divisible by 7!");
+        }else if (num > 0 && value1 && odd){
+            System.out.println("Divisible by 5!");
+        }else if (num > 0 && value2 && odd){
+            System.out.println("Divisible by 7!");
+        }else if (num > 0 && value1 != true && value2 != true && odd){
+            System.out.println("Not divisible by 5 or 7");
+        }else if (even && num > 1000){
+            System.out.println("Big even number!");
+        }else if (num > 100 && num < 1000){
+            System.out.println("Medium even number!");
+        }else if(num < 100){
+            System.out.println("Small even number!");
+        }
 
 
     }
